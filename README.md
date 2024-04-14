@@ -13,3 +13,8 @@
 ## Challenges
 
 - Embed and retrieval complex pdf with tables and diagrams
+
+## Potential Solutions
+
+- Multimodal RAG with GPT-4-Vision and LangChain
+- LlamaParse and LlamaIndex v0.1
