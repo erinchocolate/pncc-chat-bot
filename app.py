@@ -27,6 +27,12 @@ def parse_pdf(file_name):
 
 documents = parse_pdf("section-1-general-introduction-v4.pdf")
 
+def write_to_markdown_file(document, filename):
+    with open(filename, 'w') as file:
+        file.write(documents[0].text)
+
+write_to_markdown_file(documents, "output.md")
+
 Settings.llm = OpenAI(model="gpt-3.5-turbo")
 Settings.embed_model = OpenAIEmbedding(model="text-embedding-3-small")
 
@@ -49,7 +55,7 @@ recursive_query_engine = recursive_index.as_query_engine(
     verbose=True
 )
 
-query = "How many hectares does residential zone have?"
+query = "What are bottom lines in its 2023 Housing and Business Needs Assessment for Palmerston North council?"
 response = recursive_query_engine.query(query)
 
 print(response)
